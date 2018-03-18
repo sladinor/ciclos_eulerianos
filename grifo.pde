@@ -231,8 +231,7 @@ void draw() {
   }
   //segundo nivel
   if (nivel2==true){
-  if ( mouseX>40 && mouseX<60 && mouseY>40 && mouseY<60) {p1=p1+1;} 
-  print(p2);
+  if ( mouseX>40 && mouseX<60 && mouseY>40 && mouseY<60) {p1=p1+1;}
   if ( mouseX>190 && mouseX<210 && mouseY>40 && mouseY<60) {p2=p2+1;}
   if ( mouseX>340 && mouseX<360 && mouseY>40 && mouseY<60) {p3=p3+1;}
   if ( mouseX>190 && mouseX<210 && mouseY>120 && mouseY<140) {p4=p4+1;}
