@@ -3,6 +3,7 @@ int i=0, p1=0,p2=0,p3=0,p4=0,p5=0,p6=0,p7=0,p8=0,p9=0,p10=0;
 boolean mousePressed, mouse=false;  
 boolean nivel1=true, nivel2=false, nivel3=false;
 void setup (){
+  clear();
   size (600, 400);
   if (nivel1==true){
    n1(); 
@@ -24,12 +25,12 @@ void draw() {
     py1=y1;
     mouse=true;
   }
-  
   if (mousePressed==true && mouse==true){
      x2=mouseX;
      y2=mouseY;
     }
-   
+  x1=0;
+  y1=0;
   strokeWeight(3);
   line(px1, py1, x2, y2);
   px1=x2;
@@ -40,7 +41,6 @@ void draw() {
     text("GAME OVER", 200, 200);
     noLoop();
   }
-
   if ( p1>1 || p2>2 || p3>2 || p4>1 || p5>1 || p6>1 || p7>1 || p8>1 || p9>1){
     textSize(32);
     fill(145, 69, 200);
@@ -48,16 +48,13 @@ void draw() {
     noLoop();
   }
   if ( (p2>=2 || p3>=2) && (p1>=1 && p2>=1 && p3>=1 && p4>=1 && p5>=1 && p6>=1 && p7>=1 && p8>=1 && p9>=1 && i>=11) ){
-    textSize(32);
-    fill(145, 69, 200);
-    text("WELL DONE!", 200, 200);
+    print(px1, py1, x2, y2);
     i=0;
     x1=0;y1=0;x2=0;y2=0;px1=0;py1=0;
     p1=0;p2=0;p3=0;p4=0;p5=0;p6=0;p7=0;p8=0;p9=0;
     mouse=false;
     nivel1=false;
     nivel2=true;
-    clear();
     setup(); 
   }
   }
@@ -70,12 +67,12 @@ void draw() {
     py1=y1;
     mouse=true;
   }
-  
   if (mousePressed==true && mouse==true){
      x2=mouseX;
      y2=mouseY;
     }
-   
+  x1=0;
+  y1=0;  
   strokeWeight(3);
   line(px1, py1, x2, y2);
   px1=x2;
@@ -86,7 +83,6 @@ void draw() {
     text("GAME OVER", 200, 200);
     noLoop();
   }
-
   if ( p1>1 || p2>1 || p3>1 || p6>1 || p7>1 || p8>1 || p9>1 || p10>1 || p4>2 || p5>2 ){
     textSize(32);
     fill(145, 69, 200);
@@ -106,7 +102,7 @@ void draw() {
     clear();
     setup();
   }
-  }
+ }
   //tercer nivel-----------------------------------------
   if (nivel3==true){
     if (mousePressed==true && mouse==false){
@@ -116,12 +112,10 @@ void draw() {
     py1=y1;
     mouse=true;
   }
-  
   if (mousePressed==true && mouse==true){
      x2=mouseX;
      y2=mouseY;
     }
-   
   strokeWeight(3);
   line(px1, py1, x2, y2);
   px1=x2;
@@ -132,7 +126,6 @@ void draw() {
     text("GAME OVER", 200, 200);
     noLoop();
   }
-
   if ( p1>1 || p2>3 || p3>3 || p6>1 || p4>3 || p5>3 ){
     textSize(32);
     fill(145, 69, 200);
@@ -150,7 +143,6 @@ void draw() {
     setup();
   }
   }
-
 }
  void n1(){
   background(210); 
@@ -215,7 +207,7 @@ void draw() {
  }
  void mousePressed(){
   mousePressed=true;
-  //primer nivel
+ //primer nivel
   if (nivel1==true){
   if ( mouseX>190 && mouseX<210 && mouseY>40 && mouseY<60) {p1=p1+1;}
   if ( mouseX>90 && mouseX<110 && mouseY>140 && mouseY<160) {p2=p2+1;}
@@ -227,8 +219,8 @@ void draw() {
   if ( mouseX>165 && mouseX<185 && mouseY>290 && mouseY<310) {p8=p8+1;}
   if ( mouseX>215 && mouseX<235 && mouseY>290 && mouseY<310) {p9=p9+1;}
   i++;
-  }
-  //segundo nivel
+ }
+ //segundo nivel
   if (nivel2==true){
   if ( mouseX>40 && mouseX<60 && mouseY>40 && mouseY<60) {p1=p1+1;}
   if ( mouseX>190 && mouseX<210 && mouseY>40 && mouseY<60) {p2=p2+1;}
